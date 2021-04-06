@@ -6,6 +6,9 @@ import Btn from "./button";
 import Con from "./con";
 import Breadcrumb from "./breadcrumb";
 
+import Alert from "../lib/components/alert";
+import List from "./list";
+
 const App = ({ userId }: { userId: string }) => {
   return (
     <>
@@ -24,6 +27,8 @@ const App = ({ userId }: { userId: string }) => {
       <Btn />
       <Con />
       <Breadcrumb />
+      <Alert>dfdfghjg</Alert>
+      <List />
 
       <Switch>
         <Route path="/sleep">
