@@ -1,5 +1,7 @@
 import React from "react";
 
+import { HourglassEmptyTwoTone as LoadIcon } from "@material-ui/icons";
+
 export const Loader = <A,>({
   promise,
   Component,
@@ -16,7 +18,7 @@ export const Loader = <A,>({
       console.log(x);
       setData(x);
     });
-    return <p>is loading</p>;
+    return <LoadIcon />;
   }
 
   if (data) {

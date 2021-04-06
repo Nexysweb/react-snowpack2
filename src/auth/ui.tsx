@@ -12,12 +12,14 @@ interface Redirect {
   expires: number;
 }
 
-export const getRedirect = (code: string): Promise<Redirect> =>
-  fetch("/api/auth/redirect?code=" + code).then(async (x) => {
-    const t: Redirect = await x.json();
-    window.localStorage.setItem("user_id", t.user_id);
-    return t;
-  });
+export const getRedirect = async (code: string): Promise<Redirect> => {
+  const r = await fetch("/api/auth/redirect?code=" + code);
+  const t: Redirect = await r.json();
+  window.localStorage.setItem("user_id", t.user_id);
+  const c = window.localStorage.getItem("user_id");
+  console.log(c);
+  return t;
+};
 
 export const ConnectUrl = ({ data }: { data: string }) => (
   <p>
